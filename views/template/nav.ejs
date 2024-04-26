@@ -1,0 +1,71 @@
+<nav class="navbar navbar_b navbar-expand-md sticky-top" style="background-color: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px);">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/notes"><i class="fa-solid fa-clipboard fs-1"></i></a>
+    <!-- Adjust input field width for small devices -->
+    <% if(curUser){ %>
+    <form method="get" action="/notes/search" class="d-flex">
+      <input type="search" name="search" id="search" class="search-large search-sm p-1 h-25"> <!-- Use class to set large size -->
+      <button type="submit" class="btn-search-md btn-search-sm btn btn-success  h-20"><i class="fa fa-search"></i></button> <!-- Use class to set large size -->
+    </form>
+    <% } %>
+    <div class="ms d-md-none"> <!-- Display only in mobile view -->
+      <% if(curUser){ %>
+      <p class="mt-2 ml-6"><b>Hey,<%= curUser.username %>..</b></p>
+      <% } %>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon" style="width: 20px; height: 20px;"></span> <!-- Adjust width and height of the toggler icon -->
+    </button>
+    <div class="collapse navbar-collapse col-sm-3" id="navbarNavAltMarkup">
+      <div class="ms-auto">
+        <div class="navbar-nav p-2">
+          <a class="nav-link" href="/notes/new">Create new <i class="fa-solid fa-pen"></i></a>
+          <% if(!curUser) { %>
+          <a class="nav-link " href="/notes/register"><b>SignUp</b></a>
+          <a class="nav-link" href="/notes/login"><b>LogIn</b></a>
+          <% } %>
+          <% if(curUser){ %>
+         
+          <a class="nav-link" href="/notes/logout">Log Out</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+/* Apply green background for collapsed navbar on small screens */
+@media (max-width: 500px) {
+  #navbarNavAltMarkup {
+    background-color: #ffffff !important;
+    z-index: 10; /* Green background color */
+  }
+
+  /* Adjust input field width for small devices */
+  .search-large {
+    width: 120px; /* Set large input field width for small devices */
+  }
+
+  /* Adjust button size for small devices */
+  .btn-search-large {
+    min-width: 50px; /* Set large button size for small devices */
+  }
+  .d-flex{
+    margin-left: 20px;
+  }
+}
+
+/* Adjust input field width for large devices */
+@media (min-width: 768px) {
+  .search-large {
+    margin-left: 20px;
+    width: 300px; /* Set large input field width for large devices */
+  }
+
+  /* Adjust button size for large devices */
+  .btn-search-large {
+    min-width: 100px; /* Set large button size for large devices */
+  }
+}
+</style>

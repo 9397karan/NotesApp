@@ -1,0 +1,182 @@
+<% layout("./layouts/boilerplate.ejs") %>
+<style>
+ body{
+	overflow: hidden;
+ }
+.content1{
+	width:100%;
+	height:100%;
+}
+
+.men{
+	height:auto;
+	width:auto;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background-image: url("download (2).svg");
+	background-size: cover;
+	z-index: -1;
+	
+
+}
+
+.text{
+	height:150px;
+	width:500px;
+	margin: auto;
+	margin-top: 10%;
+	color:rgb(0, 0, 0);
+	font-family: cursive;
+	font-size:45px;
+	text-align: center;
+	text-shadow: 0px 0px 10px aqua;
+	animation: change 2s infinite;
+}
+@keyframes change {
+	0%{text-shadow: 0px 0px 10px #066e29;}
+	50%{text-shadow: 0px 0px 10px transparent;}
+	100%{text-shadow: 0px 0px 10px #066e29;}
+}
+
+.women{
+	height:auto;
+	width:auto;
+	position:absolute;
+	bottom:0px;
+	z-index: -1;
+	right:0px;
+	background-size: cover;
+	background-image: url("download (1).svg");
+
+}
+
+/*  Responsive	 */
+
+@media (min-width: 1300px)
+{
+
+	.men{
+		height:600px;
+		width:350px;
+	}
+	.women{
+		height: 600px;
+		width:350px
+	}
+
+	.text{
+		font-size:55px
+	}
+}
+
+@media (max-width: 1300px) {
+	
+	.men {
+	  height: 550px;
+	  width: 400px;
+	}
+	.women{
+		height: 550px;
+		width: 350px;
+	}
+  
+  }
+  
+
+  @media (max-width: 1030px) {
+	
+	.men {
+	  height: 450px;
+	  width: 300px;
+	}
+	.women{
+		height: 450px;
+		width: 250px;
+	}
+	.text{
+		font-size:44px
+	}
+  
+  }
+  
+
+  @media (max-width: 817px) {
+	
+	.men {
+	  height: 450px;
+	  width: 300px;
+	}
+	.women{
+		height: 450px;
+		width: 250px;
+	}
+	.text{
+		margin-top:5%;
+		font-size:35px
+	}
+  
+  }
+
+  
+  @media (max-width: 658px) {
+	
+	.men {
+	  height: 350px;
+	  width: 250px;
+	}
+	.women{
+		height: 400px;
+		width: 200px;
+	}
+	.text{
+		margin-top:15%;
+		font-size:35px
+	}
+  
+  }
+
+
+  @media (max-width: 455px) {
+	
+	.men {
+	  height: 300px;
+	  width: 200px;
+      
+	}
+	.women{
+		height: 300px;
+		width: 180px;
+        margin-left: 20px;
+	}
+	.text{
+		margin-top:15%;
+		font-size:35px;
+		width:250px;
+	}
+  
+  }
+
+
+  @media (max-width: 331px) {
+	
+	.women,
+	.men {
+	  display:none
+	}
+
+  
+  }
+</style>
+
+<body>
+    
+	  <div class="content1">
+		<div class="men"></div>
+		<div class="text">
+			"Your Thought are unique , capture them before they slip away!"	<a href="/notes/new">Create One</a>
+		</div>
+		<div class="women"></div>
+	  </div>
+
+</body>
